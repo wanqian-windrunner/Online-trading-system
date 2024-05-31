@@ -15,5 +15,19 @@
             "data2": "value2",
             "data3": "value3"
         }
+    },
+    "goods": {
+        "good1": {
+            "price": 1,
+            "count": "value2"
+        },
+        "good2": {
+            "price": 2,
+            "count": "value2"
+        },
+        "good3": {
+            "price": 3,
+            "count": "value2"
+        }
     }
 }

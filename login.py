@@ -12,6 +12,7 @@ class LoginSystem:
             data = json.load(file)
             # print(file)
             print(data['users'])
+            print(data['users'][self.username]['password'] )
             if self.username in data and data['users'][self.username]['password'] == self.password:
                 print("Login successful!")
                 self.login_status = True

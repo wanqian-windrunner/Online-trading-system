@@ -1,0 +1,19 @@
+{
+    "users": {
+        "user1": {
+            "password": "password1",
+            "data2": "value2",
+            "data3": "value3"
+        },
+        "user2": {
+            "data1": "password2",
+            "data2": "value2",
+            "data3": "value3"
+        },
+        "user3": {
+            "data1": "password3",
+            "data2": "value2",
+            "data3": "value3"
+        }
+    }
+}

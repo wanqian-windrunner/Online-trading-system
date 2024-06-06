@@ -1,26 +1,13 @@
 import json
+from utils import Data_process
+
 class Menu:
-    def __init__(self):
-        self.logged_in = True
-
-
-
-    def login_menu(self):
-        while not self.logged_in:
-            username = input("Enter your username: ").strip()
-            password = input("Enter your password: ").strip()
-
-            # Perform login validation logic here
-            # For example, check if the username and password are correct
-
-            if username == "admin" and password == "password":
-                self.logged_in = True
-                print("Login successful!")
-            else:
-                print("Invalid username or password. Please try again.")
+    def __init__(self,status,userdata):
+        self.logged_in = status
+        self.balance = userdata['balance']
+        self.goodsdata = Data_process.read()['goods']
 
     def function_menu(self):
-
 
         while self.logged_in:
             print("1. View account balance")
@@ -29,11 +16,11 @@ class Menu:
             print("4. Sell stocks")
             print("5. Logout")
 
-            choice = input("Enter your choice: ")
+            choice = input("Enter your choice number: ")
 
             if choice == "1":
                 # Logic for viewing account balance
-                print("Your account balance is $1000\n")
+                print(f"Your account balance is ${self.balance}")
             elif choice == "2":
                 # Logic for buying stocks
                 print("Buying stocks...\n")
@@ -54,9 +41,7 @@ class Menu:
 
     def buy_stocks_menu(self):
 
-        with open('.\data.json', 'r') as file:
-            good_data = json.load(file)
-        good = good_data["goods"]
+        good = self.goodsdata
         print('1.'+good['1']['name'])
         print('2.'+good['2']['name'])
         print('3.'+good['3']['name'])
@@ -101,3 +86,8 @@ class Menu:
             self.buy_stocks_menu()
         else:
             print('Invalid choice. Please try again.\n')
+
+
+if __name__ == '__main__':
+    a = Menu(True)
+    a.function_menu()

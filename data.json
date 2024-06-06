@@ -17,18 +17,18 @@
         }
     },
     "goods": {
-        "good1": {
-            "code": 1,
+        "1": {
+            "name": "Apple",
             "price": 1,
             "count": "value2"
         },
-        "good2": {
-            "code": 2,
+        "2": {
+            "name": "Banana",
             "price": 2,
             "count": "value2"
         },
-        "good3": {
-            "code": 3,
+        "3": {
+            "name": "Fish",
             "price": 3,
             "count": "value2"
         }

@@ -1,36 +1,48 @@
 {
-    "users": {
-        "user1": {
-            "password": "password1",
-            "data2": "value2",
-            "data3": "value3"
-        },
-        "user2": {
-            "data1": "password2",
-            "data2": "value2",
-            "data3": "value3"
-        },
-        "user3": {
-            "data1": "password3",
-            "data2": "value2",
-            "data3": "value3"
-        }
+  "users": {
+    "user1": {
+      "name": "user1",
+      "password": "password1",
+      "balance": 1000,
+      "bag": [
+        1,
+        2
+      ]
     },
-    "goods": {
-        "1": {
-            "name": "Apple",
-            "price": 1,
-            "count": "5"
-        },
-        "2": {
-            "name": "Banana",
-            "price": 2,
-            "count": "4"
-        },
-        "3": {
-            "name": "Fish",
-            "price": 3,
-            "count": "3"
-        }
+    "user2": {
+      "name": "user2",
+      "password": "password2",
+      "balance": 1000,
+      "bag": [
+        1,
+        2
+      ]
+    },
+    "user3": {
+      "name": "user3",
+      "password": "password3",
+      "balance": 1000,
+      "bag": [
+        1,
+        2
+      ]
     }
+  },
+  "goods": {
+    "1": {
+      "name": "Apple",
+      "price": 1,
+      "count": "5"
+    },
+    "2": {
+      "name": "Banana",
+      "price": 2,
+      "count": "4"
+    },
+    "3": {
+      "name": "Fish",
+      "price": 3,
+      "count": "3"
+    }
+  }
 }

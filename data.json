@@ -20,17 +20,17 @@
         "1": {
             "name": "Apple",
             "price": 1,
-            "count": "value2"
+            "count": "5"
         },
         "2": {
             "name": "Banana",
             "price": 2,
-            "count": "value2"
+            "count": "4"
         },
         "3": {
             "name": "Fish",
             "price": 3,
-            "count": "value2"
+            "count": "3"
         }
     }
 }

@@ -4,45 +4,48 @@
       "name": "user1",
       "password": "password1",
       "balance": 1000,
-      "bag": [
-        1,
-        2
-      ]
+      "bag": {
+        "Apple": 0,
+        "Banana": 0,
+        "Fish": 0
+      }
     },
     "user2": {
       "name": "user2",
       "password": "password2",
       "balance": 1000,
-      "bag": [
-        1,
-        2
-      ]
+      "bag": {
+        "Apple": 0,
+        "Banana": 0,
+        "Fish": 0
+      }
     },
     "user3": {
       "name": "user3",
       "password": "password3",
       "balance": 1000,
-      "bag": [
-        1,
-        2
-      ]
+      "bag": {
+        "Apple": 0,
+        "Banana": 0,
+        "Fish": 0
+      }
     }
   },
   "goods": {
     "1": {
       "name": "Apple",
       "price": 1,
-      "count": "5"
+      "count": 5
     },
     "2": {
       "name": "Banana",
       "price": 2,
-      "count": "4"
+      "count": 4
     },
     "3": {
       "name": "Fish",
       "price": 3,
-      "count": "3"
+      "count": 3
     }
   }
 }

@@ -10,11 +10,11 @@ while not loginsystem.login_status:
         loginsystem.register()
     elif option == '2':
         loginsystem.login()
-    # sleep(2)
+    sleep(2)
 userdata = loginsystem.userdata
 
 print(userdata)
-# sleep(2)
+sleep(2)
 # 然后展示菜单
 
 from menu import Menu

@@ -38,7 +38,8 @@ class LoginSystem:
         Data_process.write(self.totaldata)
         self.login_status = True
         
-
+    def logout(self):
+        exit(0)
 
 
 if __name__ == '__main__':

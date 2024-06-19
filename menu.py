@@ -36,6 +36,7 @@ class Menu:
             elif choice == "5":
                 self.logged_in = False
                 print("Logout successful!\n")
+                exit(0)
             else:
                 print("Invalid choice. Please try again.\n")
 

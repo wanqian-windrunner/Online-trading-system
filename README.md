@@ -15,6 +15,7 @@ Online-trading-system
 2. 功能选择菜单(qkl)
 3. 查看商品(qkl)
 4. 数据读写(zt)
+5. 登出
 
 ## TODO
 1. ~~查看商品(qkl)~~
@@ -22,4 +23,3 @@ Online-trading-system
 3. 收藏栏
 4. 购物车
 5. 结账
-6. 登出

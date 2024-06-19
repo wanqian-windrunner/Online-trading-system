@@ -31,9 +31,9 @@ class LoginSystem:
             return 0
         self.balance = input("Input your balance:")
         self.userdata={'name':self.username,
-                                       'password':self.password,
-                                       'balance':self.balance,
-                                       'bag':[]}
+                        'password':self.password,
+                        'balance':self.balance,
+                        'bag':[]}
         self.totaldata['users'][self.username]=self.userdata
         Data_process.write(self.totaldata)
         self.login_status = True

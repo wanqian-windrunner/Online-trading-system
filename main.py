@@ -1,7 +1,8 @@
-from time import sleep
 from menu import Menu
 from login import LoginSystem
+from utils import Data_process
 
+Data_process.data_init()
 loginsystem=LoginSystem()
 # 登陆账户，然后存储用户数据
 while not loginsystem.login_status:
@@ -10,11 +11,11 @@ while not loginsystem.login_status:
         loginsystem.register()
     elif option == '2':
         loginsystem.login()
-    sleep(2)
+
 userdata = loginsystem.userdata
 
 print(userdata)
-sleep(2)
+
 # 然后展示菜单
 
 from menu import Menu

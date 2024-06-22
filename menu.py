@@ -170,6 +170,7 @@ class Menu:
 
 
 if __name__ == '__main__':
-    a = Menu(True)
+    userdata = {'name': 'user1', 'password': 'password1', 'balance': 1000, 'bag': {'Apple': 0, 'Banana': 0, 'Fish': 0}}
+    a = Menu(True,userdata)
     a.function_menu()
 

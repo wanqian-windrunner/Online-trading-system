@@ -11,8 +11,10 @@ class Data_process:
 
 def show_goods():
     goods = Data_process.read()['goods']
+    max_len = max([len(goods[good]['name']) for good in goods])
+    print(max_len)
     for good in goods:
-        print(good+'.',goods[good]['name'], ' price:',goods[good]['price'],' count:',goods[good]['count'])
+        print(good,'.',goods[good]['name'].ljust(max_len,' '), '  price: ',goods[good]['price'],'$ count: ',goods[good]['count'],sep='')
 
 
 if __name__ == '__main__':

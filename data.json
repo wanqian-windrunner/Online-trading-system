@@ -5,9 +5,9 @@
       "password": "password1",
       "balance": 1000,
       "bag": {
-        "Apple": 0,
-        "Banana": 0,
-        "Fish": 0
+        "1": 0,
+        "2": 0,
+        "3": 0
       }
     },
     "user2": {
@@ -15,9 +15,9 @@
       "password": "password2",
       "balance": 1000,
       "bag": {
-        "Apple": 0,
-        "Banana": 0,
-        "Fish": 0
+        "1": 0,
+        "2": 0,
+        "3": 0
       }
     },
     "user3": {
@@ -25,9 +25,9 @@
       "password": "password3",
       "balance": 1000,
       "bag": {
-        "Apple": 0,
-        "Banana": 0,
-        "Fish": 0
+        "1": 0,
+        "2": 0,
+        "3": 0
       }
     }
   },

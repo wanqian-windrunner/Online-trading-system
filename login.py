@@ -1,5 +1,6 @@
 import json
 from utils import Data_process
+import hashlib
 
 class LoginSystem:
     def __init__(self):
@@ -16,8 +17,8 @@ class LoginSystem:
         # 打印输入的用户名和密码 (用于调试)
         # print(self.username, self.password)
         
-        # 判断用户名和密码是否正确，正确则存储数据，否则提示错误
-        if self.username in self.user_data and self.user_data[self.username]['password'] == self.password:
+        # 判断用户名和密码是否正确，正确则存储数据，否则提示错误，为了保证密码安全，我们使用hashlib库对密码进行加密
+        if self.username in self.user_data and self.user_data[self.username]['password'] == self.passwordhashlib.sha256(self.password.encode()).hexdigest():
             print("登录成功！欢迎, " + self.username + "!")
             # 存储用户数据
             self.userdata = self.user_data[self.username]
@@ -43,7 +44,7 @@ class LoginSystem:
         # 创建用户数据字典
         self.userdata = {
             'name': self.username,
-            'password': self.password,
+            'password': hashlib.sha256(self.password.encode()).hexdigest(),
             'balance': self.balance,
             'bag': []
         }

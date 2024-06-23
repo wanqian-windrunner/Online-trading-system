@@ -26,6 +26,14 @@ def show_goods():
     for good in goods:
         print(good,'.',goods[good]['name'].ljust(max_len,' '), '  price: ',goods[good]['price'],'$ count: ',goods[good]['count'],sep='')
 
+def show_bag(user_data):
+    goods = Data_process.read()['goods']
+    
+    max_len = max([len(goods[good]['name']) for good in goods])
+    # print(max_len)
+    for user_good in user_data['bag']:
+        print('     ',goods[user_good]['name'].ljust(max_len,' '), '  count: ',user_data['bag'][user_good],sep='')
+
 
 if __name__ == '__main__':
     show_goods()

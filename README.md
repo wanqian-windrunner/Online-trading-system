@@ -7,6 +7,7 @@ Online-trading-system
 ├── login.py
 ├── main.py
 ├── menu.py
+├── trade.py
 ├── utils.py
 └── README.md
 ```

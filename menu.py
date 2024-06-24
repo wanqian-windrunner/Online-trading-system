@@ -10,7 +10,7 @@ class Menu:
         self.bag = userdata['bag']
 
 #——————————————————————————————————————————————————————————————————————————————————————————————————————————————
-    def function_menu(self):
+    def function_menu(self,userdata):
         while self.logged_in:
             print('1.balance\n2.buy\n3.bag\n4.sell\n5.logout\n')
             choice = input('Enter your choice: ')
@@ -20,7 +20,8 @@ class Menu:
             elif choice == "2":
                 self.bbbbuy()
             elif choice == "3":
-                2
+                Showshowway.show_bag(userdata)
+                print()
             elif choice == "4":
                 self.sellsellsell()
             elif choice == "5":
@@ -51,6 +52,11 @@ class Menu:
             print('\nNO\n')
             self.bbbbuy()
             return
+
+        Showshowway.show_detail(str(g_n))
+
+
+
         self.maisuan(g_n,goods)
 #return用于解决完成一个代码后仍然继续下面的内容
 #——————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -82,7 +88,56 @@ class Menu:
         self.bbbbuy()
 
 
-    # def sellsellsell(self):
+    def sellsellsell(self,userdata):
+        Showshowway.show_bag(userdata)
+        print()
+        sell_choice = input('Please input which one to sell(q to quit):\n')
+        if sell_choice == 'q':
+            self.function_menu(userdata)
+            return
+        try:
+            sell_choice = int(sell_choice)
+        except:
+            print('Please input a number')
+            self.sellsellsell()
+            return
+
+        self.sell_time(sell_choice)
+
+
+    def sell_time(self,sell_choice):
+        goods = Data_process.read()['goods']
+        sell_number = input(f"\nInput how many you want to sell(you have {self.bag[str(sell_choice)]},q to quit):\n")
+        if sell_number == 'q':
+            self.sellsellsell(userdata)
+            return
+        try:
+            sell_number = int(sell_number)
+        except:
+            print('\nA number,please')
+            self.sellsellsell()
+            return
+        if sell_number > self.bag[str(sell_choice)]:
+            print('\nWhat? HOW MANY?? U like zt')
+            self.sell_time(sell_choice)
+            return
+
+        trade = Trade(userdata)
+        trade.sell(str(sell_choice),sell_number)
+        increase = sell_number * goods[str(sell_choice)]['price']
+
+        print(f'OK!You get {increase}$\n')
+        input('Press Enter to continue...\n')
+
+        self.sellsellsell(userdata)
+
+
+
+
+
+
+
+
 
 
 
@@ -91,7 +146,7 @@ class Menu:
 
 
 if __name__ == '__main__':
-    userdata = {'name': 'user1', 'password': 'password1', 'balance': 1000, 'bag': {'2': 0, '1': 0, '3': 0}}
+    userdata = {'name': 'user1', 'password': 'password1', 'balance': 1000, 'bag': {'1': 0, '2': 0, '3': 0}}
     a = Menu(True,userdata)
-    a.function_menu()
+    a.function_menu(userdata)
     # Showshowway.show_bag(userdata)

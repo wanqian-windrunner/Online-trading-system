@@ -10,7 +10,7 @@ class Menu:
         self.bag = userdata['bag']
 
 #——————————————————————————————————————————————————————————————————————————————————————————————————————————————
-    def f_m(self):
+    def function_menu(self):
         while self.logged_in:
             print('1.balance\n2.buy\n3.bag\n4.sell\n5.logout\n')
             choice = input('Enter your choice: ')
@@ -40,7 +40,7 @@ class Menu:
         g_n = input('\nEnter your choice(input q to quit):\n')
         if g_n == 'q':
             print()
-            self.f_m()
+            self.function_menu()
             return
         try:
             g_n = int(g_n)
@@ -61,7 +61,7 @@ class Menu:
         buy_num = input('\nPlease input how many you want to buy(q to quit):\n')
         if buy_num == 'q':
             print()
-            self.f_m()
+            self.function_menu()
             return
         try:
             buy_num = int(buy_num)
@@ -111,4 +111,4 @@ class Menu:
 if __name__ == '__main__':
     userdata = {'name': 'user1', 'password': 'password1', 'balance': 1000, 'bag': {'Apple': 0, 'Banana': 0, 'Fish': 0}}
     a = Menu(True,userdata)
-    a.f_m()
+    a.function_menu()

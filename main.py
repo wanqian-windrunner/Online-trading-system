@@ -20,4 +20,4 @@ print(userdata)
 
 from menu import Menu
 menusystem = Menu(loginsystem.login_status,userdata)
-menusystem.f_m()
+menusystem.function_menu()

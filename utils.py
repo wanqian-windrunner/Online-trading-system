@@ -27,12 +27,12 @@ class Showshowway:
         for good in goods:
             print(good,'.',goods[good]['name'])
 
-    def show_detail(self,good_id:str):
+    def show_detail(good_id:str):
         goods = Data_process.read()['goods']
         print(good_id,'.',goods[good_id]['name'], '\n    price: ',goods[good_id]['price'],'$\n    count: ',goods[good_id]['count'],'$\n    comment: ',sep='')
 
 
-    def show_bag(self,user_data):
+    def show_bag(user_data):
         goods = Data_process.read()['goods']
         max_len = max([len(goods[good]['name']) for good in goods])
         # print(max_len)

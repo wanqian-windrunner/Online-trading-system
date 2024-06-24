@@ -52,7 +52,10 @@ class Menu:
             print('\nNO\n')
             self.bbbbuy()
             return
-        
+
+        Showshowway.show_detail(str(g_n))
+
+
 
         self.maisuan(g_n,goods)
 #return用于解决完成一个代码后仍然继续下面的内容

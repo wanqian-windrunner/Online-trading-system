@@ -1,5 +1,6 @@
 import json
-from utils import Data_process
+from utils import Data_process , Showshowway
+from trade import Trade
 
 class Menu:
     def __init__(self,status,userdata):
@@ -8,7 +9,8 @@ class Menu:
         self.goodsdata = Data_process.read()['goods']
         self.bag = userdata['bag']
 
-    def f_m(self):
+#——————————————————————————————————————————————————————————————————————————————————————————————————————————————
+    def function_menu(self):
         while self.logged_in:
             print('1.balance\n2.buy\n3.bag\n4.sell\n5.logout\n')
             choice = input('Enter your choice: ')
@@ -33,15 +35,12 @@ class Menu:
 
     #这里是购买
     def bbbbuy(self):
+        Showshowway.show_goods()
         goods = Data_process.read()['goods']
-        max_len = max([len(goods[good]['name']) for good in goods])
-        for good in goods:
-            print(good, '.', goods[good]['name'].ljust(max_len, ' '), '  price: ', goods[good]['price'], '$ count: ',
-                  goods[good]['count'], sep='')
         g_n = input('\nEnter your choice(input q to quit):\n')
         if g_n == 'q':
             print()
-            self.f_m()
+            self.function_menu()
             return
         try:
             g_n = int(g_n)
@@ -62,7 +61,7 @@ class Menu:
         buy_num = input('\nPlease input how many you want to buy(q to quit):\n')
         if buy_num == 'q':
             print()
-            self.f_m()
+            self.function_menu()
             return
         try:
             buy_num = int(buy_num)
@@ -72,38 +71,18 @@ class Menu:
         if buy_num > int(goods[str(g_n)]['count']):
             print('\nToo many!\n')
             self.bbbbuy()
-#——————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
-        goods[str(g_n)]['count'] -= buy_num          #这一行不生效
-        self.balance -= buy_num * goods[str(g_n)]['price']
+        trade = Trade(userdata)
+        trade.purchase(str(g_n),buy_num)
         reduce = buy_num * goods[str(g_n)]['price']
-                                                    #这里需要计算bag
-#——————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+
         print(f'OK!You cost {reduce}$\n')
         input('Press Enter to continue...\n')
         self.bbbbuy()
 
 
-    def sellsellsell(self):
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    # def sellsellsell(self):
 
 
 
@@ -112,6 +91,7 @@ class Menu:
 
 
 if __name__ == '__main__':
-    userdata = {'name': 'user1', 'password': 'password1', 'balance': 1000, 'bag': {'Apple': 0, 'Banana': 0, 'Fish': 0}}
+    userdata = {'name': 'user1', 'password': 'password1', 'balance': 1000, 'bag': {'2': 0, '1': 0, '3': 0}}
     a = Menu(True,userdata)
-    a.f_m()
+    a.function_menu()
+    # Showshowway.show_bag(userdata)

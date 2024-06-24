@@ -37,7 +37,7 @@ class Showshowway:
         max_len = max([len(goods[good]['name']) for good in goods])
         # print(max_len)
         for user_good in user_data['bag']:
-            print('     ',goods[user_good]['name'].ljust(max_len,' '), '  count: ',user_data['bag'][user_good],sep='')
+            print(f'{user_good}     ',goods[user_good]['name'].ljust(max_len,' '), '  count: ',user_data['bag'][user_good],sep='')
 
 
 if __name__ == '__main__':

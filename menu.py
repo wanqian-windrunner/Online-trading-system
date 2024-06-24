@@ -90,25 +90,8 @@ class Menu:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
-    userdata = {'name': 'user1', 'password': 'password1', 'balance': 1000, 'bag': {'Apple': 0, 'Banana': 0, 'Fish': 0}}
+    userdata = {'name': 'user1', 'password': 'password1', 'balance': 1000, 'bag': {'2': 0, '1': 0, '3': 0}}
     a = Menu(True,userdata)
     a.function_menu()
+    # Showshowway.show_bag(userdata)

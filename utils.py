@@ -19,24 +19,25 @@ class Data_process:
         with open('data.json', 'w') as file:
             json.dump(data, file, indent=2)
 class Showshowway:
-    def __init__(self):
-        self.goods = Data_process.read()['goods']
 
     def show_goods(self):
-        max_len = max([len(self.goods[good]['name']) for good in self.goods])
+        goods = Data_process.read()['goods']
+        max_len = max([len(goods[good]['name']) for good in goods])
         # print(max_len)
-        for good in self.goods:
-            print(good,'.',self.goods[good]['name'])
+        for good in goods:
+            print(good,'.',goods[good]['name'])
 
     def show_detail(self,good_id:str):
-        print(good_id,'.',self.goods[good_id]['name'], '\n    price: ',self.goods[good_id]['price'],'$\n    count: ',self.goods[good_id]['count'],'$\n    comment: ',sep='')
+        goods = Data_process.read()['goods']
+        print(good_id,'.',goods[good_id]['name'], '\n    price: ',goods[good_id]['price'],'$\n    count: ',goods[good_id]['count'],'$\n    comment: ',sep='')
 
 
     def show_bag(self,user_data):
-        max_len = max([len(self.goods[good]['name']) for good in self.goods])
+        goods = Data_process.read()['goods']
+        max_len = max([len(goods[good]['name']) for good in goods])
         # print(max_len)
         for user_good in user_data['bag']:
-            print('     ',self.goods[user_good]['name'].ljust(max_len,' '), '  count: ',user_data['bag'][user_good],sep='')
+            print('     ',goods[user_good]['name'].ljust(max_len,' '), '  count: ',user_data['bag'][user_good],sep='')
 
 
 if __name__ == '__main__':

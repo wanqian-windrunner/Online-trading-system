@@ -1,5 +1,5 @@
 import json
-from utils import Data_process , show_goods
+from utils import Data_process , Showshowway
 from trade import Trade
 
 class Menu:
@@ -35,7 +35,7 @@ class Menu:
 
     #这里是购买
     def bbbbuy(self):
-        show_goods()
+        Showshowway.show_goods()
         goods = Data_process.read()['goods']
         g_n = input('\nEnter your choice(input q to quit):\n')
         if g_n == 'q':

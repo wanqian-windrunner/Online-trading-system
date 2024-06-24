@@ -20,7 +20,7 @@ class Data_process:
             json.dump(data, file, indent=2)
 class Showshowway:
 
-    def show_goods()):
+    def show_goods():
         goods = Data_process.read()['goods']
         max_len = max([len(goods[good]['name']) for good in goods])
         # print(max_len)

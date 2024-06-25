@@ -15,7 +15,7 @@ class Shopping_cart:
         goods = Data_process.read()['goods']
         Showshowway.show_goods()
         print()
-        Shopping_cart.choice_number = input("Input which you want to add in?(q to quit):")
+        Shopping_cart.choice_number = input("Input which you want to add in?:")
         if Shopping_cart.choice_number == 'q':
             print()
             Shopping_cart.add_time(userdata)
@@ -33,7 +33,7 @@ class Shopping_cart:
         Showshowway.show_detail(str(Shopping_cart.choice_number))
         print()
         while True:
-            add_num = int(input("Please input how many you want to add:(q to quit)"))
+            add_num = int(input("Please input how many you want to add: "))
             print()
             if add_num > int(goods[str(Shopping_cart.choice_number)]['count']):
                 print('The quantity you selected is greater than the quantity in stock.\n'

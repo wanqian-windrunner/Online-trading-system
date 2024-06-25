@@ -28,7 +28,7 @@
       "cart": {
         "1": 0,
         "2": 2,
-        "3": 0,
+        "3": 1,
         "4": 0,
         "5": 0,
         "6": 0
@@ -60,27 +60,27 @@
     "1": {
       "name": "Apple",
       "price": 1,
-      "count": 2
+      "count": 10
     },
     "2": {
       "name": "Banana",
       "price": 2,
-      "count": 2
+      "count": 8
     },
     "3": {
       "name": "Fish",
       "price": 3,
-      "count": 3
+      "count": 9
     },
     "4": {
       "name": "Meat",
       "price": 4,
-      "count": 2
+      "count": 6
     },
     "5": {
       "name": "Milk_yili",
       "price": 5,
-      "count": 1
+      "count": 15
     },
     "6": {
       "name": "Bread",

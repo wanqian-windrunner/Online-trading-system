@@ -18,8 +18,9 @@ class Data_process:
     def write(data):
         with open('data.json', 'w') as file:
             json.dump(data, file, indent=2)
-class Showshowway:
 
+
+class Showshowway:
     def show_goods():
         goods = Data_process.read()['goods']
         max_len = max([len(goods[good]['name']) for good in goods])
@@ -43,4 +44,4 @@ class Showshowway:
 if __name__ == '__main__':
     a = Showshowway()
     a.show_goods()
-    a.show_detail('1')
+    a.show_detail()

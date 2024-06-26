@@ -15,7 +15,7 @@ class Shopping_cart:
         goods = Data_process.read()['goods']
         Showshowway.show_goods()
         print()
-        Shopping_cart.choice_number = input("Input which you want to add in?:")
+        Shopping_cart.choice_number = input("Input which you want to add in?(q to quit):")
         if Shopping_cart.choice_number == 'q':
             print()
             Shopping_cart.add_time(userdata)

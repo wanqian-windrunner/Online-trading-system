@@ -1,5 +1,6 @@
 import json
 
+import main
 import utils
 from utils import Data_process , Showshowway
 from trade import Trade
@@ -15,7 +16,7 @@ class Menu:
 
 #——————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
-    def function_menu(self,userdata):   # 先展示菜单栏，选择商品id之后显示detail，选择对应操作
+    def function_menu(self):   # 先展示菜单栏，选择商品id之后显示detail，选择对应操作
         while self.logged_in:
                 print('1.balance\n2.buy\n3.bag\n4.sell\n5.add in shopping cart\n6.logout\n')
                 choice = input('Enter your choice: ')
@@ -25,12 +26,12 @@ class Menu:
                 elif choice == "2":
                     self.bbbbuy()
                 elif choice == "3":
-                    Showshowway.show_bag(userdata)
+                    Showshowway.show_bag(main.userdata)
                     print()
                 elif choice == "4":
-                    self.sellsellsell(userdata)
+                    self.sellsellsell()
                 elif choice == "5":
-                    Shopping_cart.add_time(userdata)
+                    Shopping_cart.add_time(main.userdata)
                 elif choice == "6":
                     self.logged_in = False
                     print("Logout\n")
@@ -48,7 +49,7 @@ class Menu:
         g_n = input("Input which you want to buy?(q to quit):\n")
         if g_n == 'q':
             print()
-            self.function_menu(userdata)
+            self.function_menu()
             return
         try:
             g_n = int(g_n)
@@ -74,7 +75,7 @@ class Menu:
         buy_num = input('\nPlease input how many you want to buy(q to quit):\n')
         if buy_num == 'q':
             print()
-            self.function_menu(userdata)
+            self.function_menu()
             return
         try:
             buy_num = int(buy_num)
@@ -95,18 +96,18 @@ class Menu:
         self.bbbbuy()
 
 
-    def sellsellsell(self,userdata):
-        Showshowway.show_bag(userdata)
+    def sellsellsell(self):
+        Showshowway.show_bag(main.userdata)
         print()
         sell_choice = input('Please input which one to sell(q to quit):\n')
         if sell_choice == 'q':
-            self.function_menu(userdata)
+            self.function_menu()
             return
         try:
             sell_choice = int(sell_choice)
         except:
             print('Please input a number\n')
-            self.sellsellsell(userdata)
+            self.sellsellsell()
             return
 
         self.sell_time(sell_choice)
@@ -116,13 +117,13 @@ class Menu:
         goods = Data_process.read()['goods']
         sell_number = input(f"\nInput how many you want to sell(you have {self.bag[str(sell_choice)]},q to quit):\n")
         if sell_number == 'q':
-            self.sellsellsell(userdata)
+            self.sellsellsell()
             return
         try:
             sell_number = int(sell_number)
         except:
             print('\nA number,please')
-            self.sellsellsell(userdata)
+            self.sellsellsell()
             return
         if sell_number > self.bag[str(sell_choice)]:
             print('\nWhat? HOW MANY?? U like zt')
@@ -136,7 +137,7 @@ class Menu:
         print(f'OK!You get {increase}$\n')
         input('Press Enter to continue...\n')
 
-        self.sellsellsell(userdata)
+        self.sellsellsell()
 
 
 

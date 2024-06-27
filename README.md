@@ -1,14 +1,17 @@
 # Online-trading-system
 python homework
 ## 文件结构 
-```
+```python
 Online-trading-system
 ├── data.json
+├── evaluation.json
 ├── login.py
 ├── main.py
 ├── menu.py
 ├── trade.py
+├── evaluate.py
 ├── utils.py
+├── utils_else.py
 └── README.md
 ```
 ## 功能
@@ -16,7 +19,8 @@ Online-trading-system
 2. 功能选择菜单(qkl)
 3. 查看，购买，卖出商品(qkl,zt)
 4. 数据读写(zt)
-5. 登出
+5. 评分，评价(szy)
+6. 登出
 
 ## TODO
 1. ~~查看商品(zt)~~

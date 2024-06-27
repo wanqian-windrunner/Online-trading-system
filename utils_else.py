@@ -1,7 +1,7 @@
 # 对本交易系统使用体验的评价，在登出前执行
 import json
 
-class Data_porcess:
+class Data_process:
     def __init__(self):
         # 读取所有数据
         self.all_data = Data_porcess.read()

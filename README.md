@@ -4,22 +4,16 @@ python homework
 ```python
 Online-trading-system
 ├── data.json
-<<<<<<< HEAD
 ├── evaluatate.py
-=======
->>>>>>> 8d1d739 (修正了评价模块的一些小问题。增添了显示评分的方法)
 ├── evaluation.json
 ├── login.py
 ├── main.py
 ├── menu.py
 ├── shopping_cart.py
 ├── trade.py
-<<<<<<< HEAD
 ├── utils_else.py
-=======
-├── evaluate.py
->>>>>>> 8d1d739 (修正了评价模块的一些小问题。增添了显示评分的方法)
 ├── utils.py
+├── utils_else.py
 ├── utils_else.py
 └── README.md
 ```
@@ -27,17 +21,11 @@ Online-trading-system
 1. 注册、登录(zt)
 2. 功能选择菜单(qkl)
 3. 查看，购买，卖出商品(qkl,zt)
-<<<<<<< HEAD
 4. 加入购物车，结算(sym)
 5. 数据读写(zt)
 6. 登出
 7. 系统评价功能(szy)
 8. 
-=======
-4. 数据读写(zt)
-5. 评分，评价(szy)
-6. 登出
->>>>>>> 8d1d739 (修正了评价模块的一些小问题。增添了显示评分的方法)
 
 ## TODO
 1. ~~查看商品(zt)~~

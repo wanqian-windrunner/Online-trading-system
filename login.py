@@ -21,8 +21,6 @@ class LoginSystem:
         # 判断用户名和密码是否正确，正确则存储数据，否则提示错误，为了保证密码安全，我们使用hashlib库对密码进行加密
         if self.username in self.user_data and self.user_data[self.username]['password'] == hashlib.sha256(self.password.encode()).hexdigest():
             print("\033[32m登录成功！欢迎, \033[0m" + self.username + "\033[32m!\033[0m")
-            # 存储用户数据
-            self.userdata = self.user_data[self.username]
             self.login_status = True
         else:
             print("\033[31m无效的用户名或密码。\033[0m")

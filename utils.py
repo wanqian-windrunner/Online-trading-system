@@ -38,14 +38,14 @@ class Showshowway:
         goods = Data_process.read()['goods']
         print(f'\033[34m{good_id}.{goods[good_id]["name"]}\033[0m\n    price: ', goods[good_id]['price'], '$\n    count: ', goods[good_id]['count'], '\n    stars: ', random.randint(1, 5) * '*', sep='')
 
-    def show_bag(user_data):
+    def show_bag(user_data:dict):
         goods = Data_process.read()['goods']
         max_len = max([len(goods[good]['name']) for good in goods])
         # print(max_len)
         for user_good in user_data['bag']:
             print(f'{user_good}     ',goods[user_good]['name'].ljust(max_len,' '), '  count: ',user_data['bag'][user_good],sep='')
 
-    def show_bag(user_data):
+    def show_cart(user_data:dict):
         goods = Data_process.read()['goods']
         max_len = max([len(goods[good]['name']) for good in goods])
         # print(max_len)
@@ -54,6 +54,6 @@ class Showshowway:
 
 
 if __name__ == '__main__':
-    a = Showshowway()
-    a.show_goods()
-    a.show_detail()
+
+    Showshowway().show_goods()
+    Showshowway().show_detail(['1'])

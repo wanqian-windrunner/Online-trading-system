@@ -1,6 +1,7 @@
 import json
 from utils import Data_process
 import hashlib
+import random
 
 class LoginSystem:
     def __init__(self):
@@ -40,13 +41,14 @@ class LoginSystem:
             print('抱歉，再见~')
             return 0
         # 输入余额
-        self.balance = input("请输入您的余额: ")
+        # self.balance = input("请输入您的余额: ")
         # 创建用户数据字典
         self.userdata = {
             'name': self.username,
             'password': hashlib.sha256(self.password.encode()).hexdigest(),
-            'balance': self.balance,
-            'bag': []
+            'balance': 1000,
+            'bag': {},
+            'cart':{}
         }
         # 将新用户数据添加到总数据中
         self.totaldata['users'][self.username] = self.userdata

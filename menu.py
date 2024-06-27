@@ -1,6 +1,4 @@
 import json
-
-import main
 import utils
 from utils import Data_process , Showshowway
 from trade import Trade
@@ -12,6 +10,7 @@ class Menu:
         self.balance = userdata['balance']
         self.goodsdata = Data_process.read()['goods']
         self.bag = userdata['bag']
+        self.userdata = userdata
         # self.cart = userdata['cart']
 
 #——————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -26,12 +25,12 @@ class Menu:
                 elif choice == "2":
                     self.bbbbuy()
                 elif choice == "3":
-                    Showshowway.show_bag(main.userdata)
+                    Showshowway.show_bag(self.userdata)
                     print()
                 elif choice == "4":
                     self.sellsellsell()
                 elif choice == "5":
-                    Shopping_cart.add_time(main.userdata)
+                    Shopping_cart.add_time(self.userdata)
                 elif choice == "6":
                     self.logged_in = False
                     print("Logout\n")
@@ -97,7 +96,7 @@ class Menu:
 
 
     def sellsellsell(self):
-        Showshowway.show_bag(main.userdata)
+        Showshowway.show_bag(self.userdata)
         print()
         sell_choice = input('Please input which one to sell(q to quit):\n')
         if sell_choice == 'q':
@@ -140,23 +139,31 @@ class Menu:
         self.sellsellsell()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
-    userdata = {'name': 'user1', 'password': 'password1', 'balance': 1000, 'bag': {'1': 0, '2': 0, '3': 0}}
+    userdata = {
+      "name": "user1",
+      "password": "0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e",
+      "balance": 999,
+      "bag": {
+        "1": 1,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "cart": {
+        "1": 2,
+        "2": 2,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      }
+    }
     a = Menu(True,userdata)
-    a.function_menu(userdata)
+    a.function_menu()
     # Showshowway.show_bag(userdata)
 
-from shopping_cart import Shopping_cart

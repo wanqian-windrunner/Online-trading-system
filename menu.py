@@ -2,7 +2,7 @@ import json
 import utils
 from utils import Data_process , Showshowway
 from trade import Trade
-
+from shopping_cart import Shopping_cart
 
 class Menu:
     def __init__(self,status,userdata):
@@ -11,7 +11,6 @@ class Menu:
         self.goodsdata = Data_process.read()['goods']
         self.bag = userdata['bag']
         self.userdata = userdata
-        # self.cart = userdata['cart']
 
 #——————————————————————————————————————————————————————————————————————————————————————————————————————————————
 

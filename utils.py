@@ -8,6 +8,11 @@ class Data_process:
             for i in range(goods_len):
                 if not data['users'][user]['bag'].get(str(i+1)):
                     data['users'][user]['bag'][str(i+1)] = 0
+
+        for user in data['users']:
+            for i in range(goods_len):
+                if not data['users'][user]['cart'].get(str(i+1)):
+                    data['users'][user]['cart'][str(i+1)] = 0
         Data_process.write(data)
 
 
@@ -39,6 +44,13 @@ class Showshowway:
         # print(max_len)
         for user_good in user_data['bag']:
             print(f'{user_good}     ',goods[user_good]['name'].ljust(max_len,' '), '  count: ',user_data['bag'][user_good],sep='')
+
+    def show_bag(user_data):
+        goods = Data_process.read()['goods']
+        max_len = max([len(goods[good]['name']) for good in goods])
+        # print(max_len)
+        for user_good in user_data['cart']:
+            print(f'{user_good}     ',goods[user_good]['name'].ljust(max_len,' '), '  count: ',user_data['cart'][user_good],sep='')    
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 from menu import Menu
 from login import LoginSystem
-from utils import Dpytonata_process
+from utils import Data_process
 
 Data_process.data_init()
 loginsystem=LoginSystem()

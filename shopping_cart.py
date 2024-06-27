@@ -34,13 +34,17 @@ class Shopping_cart:
             print()
             if add_num == "q":
                 return 0
-            if add_num > int(goods[str(Shopping_cart.choice_number)]['count']):
-                print('The quantity you selected is greater than the quantity in stock.\n'
-                    'Please try again.')
-            else:
-                print('Add Shopping Cart Successfully!\n')
-                trade = Trade(userdata)
-                trade.cart(str(Shopping_cart.choice_number),int(add_num))
-                break
+            try:
+                if int(add_num) <= int(goods[str(Shopping_cart.choice_number)]['count']):
 
-from menu import Menu
+                    print('\033[32mAdd Shopping Cart Successfully!\033[0m\n')
+                    trade = Trade(userdata)
+                    trade.cart(str(Shopping_cart.choice_number),int(add_num))
+                    break
+                else:
+                    print('\033[33mThe quantity you selected is greater than the quantity in stock.\033[0m\n'
+                        'Please try again.')
+            except:
+                print('\nInvalid choice. Please try again.\n')
+                continue
+                

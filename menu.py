@@ -16,11 +16,11 @@ class Menu:
 
     def function_menu(self):   # 先展示菜单栏，选择商品id之后显示detail，选择对应操作
         while self.logged_in:
-                print('1.balance\n2.buy\n3.bag\n4.sell\n5.add in shopping cart\n6.logout\n')
+                print('——————————————————————\n1.balance\n2.buy\n3.bag\n4.sell\n5.add in shopping cart\n6.logout\n——————————————————————')
                 choice = input('Enter your choice: ')
                 print()
                 if choice == "1":
-                    print(f"Your account balance is ${self.balance}\n")
+                    print(f"\033[34mYour account balance is ${self.balance}\033[0m\n")
                 elif choice == "2":
                     self.bbbbuy()
                 elif choice == "3":
@@ -32,7 +32,7 @@ class Menu:
                     Shopping_cart.add_time(self.userdata)
                 elif choice == "6":
                     self.logged_in = False
-                    print("Logout\n")
+                    print("\033[34mLogout\033[0m\n")
                     exit(0)
                 else:
                     print("\nNO\n")
@@ -52,10 +52,10 @@ class Menu:
         try:
             g_n = int(g_n)
         except :
-            print('\nwhat\n')
+            print('\n\033[31mwhat\033[0m\n')
             self.bbbbuy()
         if g_n not in range(1,len(goods)+1):
-            print('\nNO\n')
+            print('\n\033[31mNO\n')
             self.bbbbuy()
             return
 
@@ -81,15 +81,15 @@ class Menu:
             print('\nNO\n')
             self.bbbbuy()
         if buy_num > int(goods[str(g_n)]['count']):
-            print('\nToo many!\n')
+            print('\n\033[31mToo many!\033[0m\n')
             self.bbbbuy()
 
-        trade = Trade(userdata)
+        trade = Trade(self.userdata)
         trade.purchase(str(g_n),buy_num)
         reduce = buy_num * goods[str(g_n)]['price']
 
 
-        print(f'OK!You cost {reduce}$\n')
+        print(f'\033[34mOK!You cost {reduce}$\033[0m\n')
         input('Press Enter to continue...\n')
         self.bbbbuy()
 
@@ -120,11 +120,11 @@ class Menu:
         try:
             sell_number = int(sell_number)
         except:
-            print('\nA number,please')
+            print('\n\033[31mA number,please\033[0m')
             self.sellsellsell()
             return
         if sell_number > self.bag[str(sell_choice)]:
-            print('\nWhat? HOW MANY?? U like zt')
+            print('\n\033[31mWhat? HOW MANY?? U like zt\033[0m')
             self.sell_time(sell_choice)
             return
 
@@ -132,7 +132,7 @@ class Menu:
         trade.sell(str(sell_choice),sell_number)
         increase = sell_number * goods[str(sell_choice)]['price']
 
-        print(f'OK!You get {increase}$\n')
+        print(f'\033[34mOK!You get {increase}$\033[0m\n')
         input('Press Enter to continue...\n')
 
         self.sellsellsell()

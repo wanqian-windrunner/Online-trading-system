@@ -36,8 +36,7 @@ class Showshowway:
 
     def show_detail(good_id:str):
         goods = Data_process.read()['goods']
-        print(good_id,'.',goods[good_id]['name'], '\n    price: ',goods[good_id]['price'],'$\n    count: ',goods[good_id]['count'],'\n    comment: ',random.randint(1, 5)*'*',sep='')
-
+        print(f'\033[34m{good_id}.{goods[good_id]["name"]}\033[0m\n    price: ', goods[good_id]['price'], '$\n    count: ', goods[good_id]['count'], '\n    stars: ', random.randint(1, 5) * '*', sep='')
 
     def show_bag(user_data):
         goods = Data_process.read()['goods']

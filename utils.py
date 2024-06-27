@@ -1,4 +1,5 @@
 import json
+import random
 
 class Data_process:
     def data_init():
@@ -35,7 +36,7 @@ class Showshowway:
 
     def show_detail(good_id:str):
         goods = Data_process.read()['goods']
-        print(good_id,'.',goods[good_id]['name'], '\n    price: ',goods[good_id]['price'],'$\n    count: ',goods[good_id]['count'],'\n    comment: ',sep='')
+        print(good_id,'.',goods[good_id]['name'], '\n    price: ',goods[good_id]['price'],'$\n    count: ',goods[good_id]['count'],'\n    comment: ',random.randint(1, 5)*'*',sep='')
 
 
     def show_bag(user_data):

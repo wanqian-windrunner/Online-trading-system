@@ -14,7 +14,8 @@ while not loginsystem.login_status:
 
 userdata = loginsystem.userdata
 
-print(userdata)
+# print(userdata)
 
 
-
+menusystem = Menu(loginsystem.login_status,userdata)
+menusystem.function_menu()

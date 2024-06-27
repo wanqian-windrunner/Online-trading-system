@@ -20,25 +20,25 @@ class LoginSystem:
         
         # 判断用户名和密码是否正确，正确则存储数据，否则提示错误，为了保证密码安全，我们使用hashlib库对密码进行加密
         if self.username in self.user_data and self.user_data[self.username]['password'] == hashlib.sha256(self.password.encode()).hexdigest():
-            print("登录成功！欢迎, " + self.username + "!")
+            print("\033[32m登录成功！欢迎, \033[0m" + self.username + "\033[32m!\033[0m")
             # 存储用户数据
             self.userdata = self.user_data[self.username]
             self.login_status = True
         else:
-            print("无效的用户名或密码。")
+            print("\033[31m无效的用户名或密码。\033[0m")
 
     def register(self):
         # 输入新用户名
         self.username = input("请输入您的用户名: ")
         # 检查用户名是否已存在
         if self.username in self.user_data:
-            print("用户名已存在！请尝试一个新名字或登录。")
+            print("\033[34m用户名已存在！请尝试一个新名字或登录。\033[0m")
             return 0
         # 输入密码
         self.password = input("请输入您的密码: ")  
         # 确认密码是否一致
         if input("请再次输入您的密码: ") != self.password:
-            print('抱歉，再见~')
+            print('\033[31m抱歉，再见~\033[0m')
             return 0
         # 输入余额
         # self.balance = input("请输入您的余额: ")

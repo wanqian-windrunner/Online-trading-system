@@ -13,8 +13,6 @@ Online-trading-system
 ├── trade.py
 ├── utils_else.py
 ├── utils.py
-├── utils_else.py
-├── utils_else.py
 └── README.md
 ```
 ## 功能

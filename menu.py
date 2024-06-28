@@ -56,7 +56,7 @@ class Menu:
             print('\n\033[31mwhat\033[0m\n')
             self.bbbbuy()
         if g_n not in range(1,len(goods)+1):
-            print('\n\033[31mNO\n')
+            print('\n\033[31mNO\033[0m\n')
             self.bbbbuy()
             return
 

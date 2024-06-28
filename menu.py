@@ -129,7 +129,7 @@ class Menu:
             self.sell_time(sell_choice)
             return
 
-        trade = Trade(userdata)
+        trade = Trade(self.userdata)
         trade.sell(str(sell_choice),sell_number)
         increase = sell_number * goods[str(sell_choice)]['price']
 

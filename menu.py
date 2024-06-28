@@ -1,5 +1,4 @@
 import json
-import utils
 from utils import Data_process , Showshowway
 from trade import Trade
 from shopping_cart import Shopping_cart
@@ -16,7 +15,7 @@ class Menu:
 
     def function_menu(self):   # 先展示菜单栏，选择商品id之后显示detail，选择对应操作
         while self.logged_in:
-                print('——————————————————————\n1.balance\n2.buy\n3.bag\n4.sell\n5.add in shopping cart\n6.logout\n——————————————————————')
+                print('——————————————————————\n1.balance\n2.buy\n3.bag\n4.sell\n5.add in shopping cart\n6.cart\n7.logout\n——————————————————————')
                 choice = input('Enter your choice: ')
                 print()
                 if choice == "1":
@@ -31,9 +30,11 @@ class Menu:
                 elif choice == "5":
                     Shopping_cart.add_time(self.userdata)
                 elif choice == "6":
+                    Showshowway.show_cart(self.userdata)
+                elif choice == "7":
                     self.logged_in = False
                     print("\033[34mLogout\033[0m\n")
-                    exit(0)
+                    return 0
                 else:
                     print("\nNO\n")
 #——————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -42,7 +43,7 @@ class Menu:
     #这里是购买
     def bbbbuy(self):
         goods = Data_process.read()['goods']
-        utils.Showshowway.show_goods()
+        Showshowway.show_goods()
         print()
         g_n = input("Input which you want to buy?(q to quit):\n")
         if g_n == 'q':
@@ -128,7 +129,7 @@ class Menu:
             self.sell_time(sell_choice)
             return
 
-        trade = Trade(userdata)
+        trade = Trade(self.userdata)
         trade.sell(str(sell_choice),sell_number)
         increase = sell_number * goods[str(sell_choice)]['price']
 
